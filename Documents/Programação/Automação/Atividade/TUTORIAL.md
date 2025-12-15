@@ -1,6 +1,6 @@
 TUTORIAL COMPLETO – Framework de Testes Unity (C/C++)
 
-\## 1) Objetivo do tutorial
+## 1) Objetivo do tutorial
 
 
 
@@ -60,7 +60,7 @@ executável de testes
 
 
 
-\## 2) Download do Unity
+## 2) Download do Unity
 
 
 
@@ -110,7 +110,7 @@ src/unity.h
 
 
 
-\## 3) Instalação do Unity
+## 3) Instalação do Unity
 
 
 
@@ -144,11 +144,10 @@ Copie os arquivos do Unity:
 
 
 
-cp Unity/src/unity.\* Atividade/unity/
+cp Unity/src/unity.* unity/
 
 
-
-\## 4) Baixar código de produção
+## 4) Baixar código de produção
 
 
 
@@ -184,7 +183,7 @@ src/atividade.c
 
 
 
-\#include "atividade.h"
+#include "atividade.h"
 
 
 
@@ -194,105 +193,19 @@ int soma(int a, int b) {
 
 }
 
+Ou clone o repositório do Github:
+
+git clone https://github.com/andreirocha7/Unity-test.git
 
 
-\## 5) Escrever o teste com Unity
+## 5) Rodar os testes
 
-
-
-Crie:
-
-
-
-test/test\_atividade.c
-
-
-
-\#include "unity.h"
-
-\#include "atividade.h"
-
-
-
-void setUp(void) {}
-
-void tearDown(void) {}
-
-
-
-void test\_soma(void) {
-
-&nbsp;   TEST\_ASSERT\_EQUAL(4, soma(2, 2));
-
-}
-
-
-
-int main(void)
-
-{
-
-&nbsp;   UNITY\_BEGIN();
-
-&nbsp;   RUN\_TEST(test\_soma);
-
-&nbsp;   return UNITY\_END();
-
-}
-
-
-
-\## 6) Criar o Makefile (para automatizar tudo)
-
-
-
-Makefile
-
-
-
-CC = gcc
-
-CFLAGS = -Iunity -Isrc
-
-
-
-SRC = src/atividade.c
-
-TEST = test/test\_atividade.c
-
-UNITY = unity/unity.c
-
-
-
-all: test\_run
-
-
-
-test\_run: $(SRC) $(TEST) $(UNITY)
-
-&nbsp;	$(CC) $(CFLAGS) -o build/tests $(SRC) $(TEST) $(UNITY)
-
-&nbsp;	./build/tests
-
-
-
-clean:
-
-&nbsp;	rm -rf build/tests
-
-
-
-\## 7) Rodar os testes
-
-
+cd Unity-test/Documents/Programação/Automação/Atividade
 
 No diretório do projeto:
 
 
-
 make
-
-
 
 
 
@@ -306,7 +219,7 @@ gcc -Iunity -Isrc -o build/tests src/atividade.c test/test\_atividade.c unity/un
 
 
 
-\## 8) Output esperado
+## 6) Output esperado
 
 
 
@@ -320,21 +233,18 @@ TEST(test\_atividade.c)
 
 -----------------------
 
-test\_soma\_valores\_positivos: PASS
-
-test\_soma\_valores\_negativos: PASS
-
+test\_soma\_valores: PASS
 
 
 -----------------------
 
-2 Tests 0 Failures 0 Ignored
+1 Tests 0 Failures 0 Ignored
 
 OK
 
 
 
-\## 9) Gerar relatório
+## 7) Gerar relatório
 
 
 
@@ -346,17 +256,14 @@ O Unity não gera HTML nativamente, mas você pode redirecionar para arquivo:
 
 
 
-
-
 O arquivo relatorio.txt conterá:
 
 
 
-test\_soma\_valores\_positivos: PASS
+test\_soma\_valores: PASS
 
-test\_soma\_valores\_negativos: PASS
 
-2 Tests 0 Failures
+1 Test 0 Failures
 
 
 
