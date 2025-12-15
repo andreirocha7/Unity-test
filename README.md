@@ -7,3 +7,4 @@ O objetivo é demonstrar, passo a passo, como automatizar a execução de testes
 
 O Unity é um framework leve, amplamente utilizado em projetos C, especialmente em sistemas embarcados e ambientes educacionais, por não exigir instalação complexa e funcionar apenas com arquivos .c e .h.
 
+O tutorial completo para uso da ferramenta pode ser encontrado no arquivo TUTORIAL.md
