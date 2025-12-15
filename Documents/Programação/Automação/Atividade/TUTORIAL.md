@@ -362,5 +362,3 @@ test\_soma\_valores\_negativos: PASS
 
 
 
-Esse relatório pode ser anexado ao trabalho.
-
